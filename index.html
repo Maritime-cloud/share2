@@ -19,49 +19,18 @@
 </head>
 
 <body>
-        <div class="btn" onclick="setShare()">
+        <div class="btn" onclick="sendMessage()">
             点击按钮
         </div>
 
 </body>
 
 <script type="text/javascript">
-function setShare(){
-       // 在这里调用 API，分享朋友圈
-       wx.onMenuShareTimeline({
-           title: "测试分享", // 分享标题
-           link: "https://www.rongrong.cn/", // 分享链接
-           desc:"活动",
-           imgUrl: "", // 分享显示的缩略图
-           success: function () {
-               // 用户确认分享后执行的回调函数
-               alert('分享完成');
-           },
-           cancel: function () {
-               // 用户取消分享后执行的回调函数
-               // alert('淘气了哦，你取消分享');
-           },fail: function (res) {
-               alert("sdfsd");
-         }
-       });
-       //分享给朋友
-       wx.onMenuShareAppMessage({
-           title: "active", // 分享标题
-            link: "https://www.rongrong.cn/", // 分享链接
-           desc:"sdlkflskdjf",
-           imgUrl: "", // 分享显示的缩略图
-           success: function () {
-               // 用户确认分享后执行的回调函数
-                alert('分享完成');
-           },
-           cancel: function () {
-               // 用户取消分享后执行的回调函数
-               // alert('淘气了哦，你取消分享');
-           },fail: function (res) {
-               //alert(JSON.stringify(res));
-               alert(00)
-         }
-       });
+function sendMessage(){
+
+WeixinJSBridge.on('menu:share:appmessage', function(argv){ alert("发送给好友"); });
+
+}
 
 </script>
 
