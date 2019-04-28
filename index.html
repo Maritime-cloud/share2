@@ -12,7 +12,7 @@
         width: 100px;
         height:30px;
         border:1px solid #ccc;
-        background-color: blue;
+        background-color: red;
         color:#eee;
       }
       #shareit {
@@ -57,7 +57,10 @@ function sendMessage(){
   alert(123);
 //  WeixinJSBridge.on('menu:share:timeline', function(argv){
 
-    WeixinJSBridge.invoke('shareTimeline',{
+WeixinJSBridge.on('menu:share:timeline', function(argv){
+
+WeixinJSBridge.invoke('shareTimeline',{
+
 
     "appid":"", //appid 设置空就好了。
     "img_url": "https://www.rongrong.cn/favicon.ico", //分享时所带的图片路径
@@ -74,15 +77,16 @@ function sendMessage(){
 //  });
     alert(234);
 }
-
-$("#share_btn").on("click", function() {
-     $("#shareit").show();
- });
-
-
- $("#shareit").on("click", function(){
-   $("#shareit").hide();
- })
+}
+//
+// $("#share_btn").on("click", function() {
+//      $("#shareit").show();
+//  });
+//
+//
+//  $("#shareit").on("click", function(){
+//    $("#shareit").hide();
+//  })
 
 </script>
 
