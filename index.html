@@ -55,6 +55,7 @@
 <script type="text/javascript">
 function sendMessage(){
   alert(123);
+  weixinShareTimeline();
 //  WeixinJSBridge.on('menu:share:timeline', function(argv){
   function weixinShareTimeline(title,desc,link,imgUrl){
       WeixinJSBridge.invoke('shareTimeline',{
