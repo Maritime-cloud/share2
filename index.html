@@ -11,7 +11,7 @@
         width: 100px;
         height:30px;
         border:1px solid #ccc;
-        background-color: red;
+        background-color: #000;
         color:#eee;
       }
     </style>
@@ -28,7 +28,7 @@
 <script type="text/javascript">
 function sendMessage(){
   alert(123);
-  WeixinJSBridge.on('menu:share:timeline', function(argv){
+//  WeixinJSBridge.on('menu:share:timeline', function(argv){
 
     WeixinJSBridge.invoke('shareTimeline',{
 
@@ -44,7 +44,7 @@ function sendMessage(){
         alert(456546);
     });
 
-  });
+//  });
     alert(234);
 }
 
