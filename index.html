@@ -70,6 +70,7 @@ $("#share_btn").on("click", function() {
    $("#shareit").hide();
  })
  WeixinApi.ready(function(Api) {
+   alert(123);
      // 微信分享的数据
      var wxData = {
          "appId": "", // 服务号可以填写appId
@@ -83,18 +84,23 @@ $("#share_btn").on("click", function() {
      var wxCallbacks = {
          // 分享操作开始之前
          ready : function() {
+           alert(123);
          },
          cancel : function(resp) {
+           alert(234);
          },
          // 分享失败了
          fail : function(resp) {
+           alert(456);
            shareFail();
          },
          // 分享成功
          confirm : function(resp) {
+           alert(656);
  			shareok();
          },
          all : function(resp,shareTo) {
+           alert(6767);
          }
      };
      Api.shareToFriend(wxData, wxCallbacks);
@@ -103,11 +109,11 @@ $("#share_btn").on("click", function() {
      Api.generalShare(wxData,wxCallbacks);
  });
  function shareok(){
-   alert(123);
+   alert(121212);
  }
  function shareFail(){
 
-     alert(456);
+     alert(423232356);
  }
 
 
