@@ -11,7 +11,7 @@
         width: 100px;
         height:30px;
         border:1px solid #ccc;
-        background-color: blue;
+        background-color: yellow;
         color:#fff;
       }
     </style>
@@ -27,9 +27,22 @@
 
 <script type="text/javascript">
 function sendMessage(){
+  WeixinJSBridge.on('menu:share:appmessage', function(argv){
 
-WeixinJSBridge.on('menu:share:appmessage', function(argv){ alert("发送给好友"); });
+    WeixinJSBridge.invoke('sendAppMessage',{
 
+    "appid":"", //appid 设置空就好了。
+    "img_url": "", //分享时所带的图片路径
+    "img_width": "120", //图片宽度
+    "img_height": "120", //图片高度
+    "link":"https://www.rongrong.cn/", //分享附带链接地址
+    "desc":"我是一个介绍", //分享内容介绍
+    "title":"标题，再简单不过了。"
+    }, function(res){/*** 回调函数，最好设置为空 ***/
+
+    });
+
+  });
 }
 
 </script>
