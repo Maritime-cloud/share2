@@ -69,8 +69,6 @@ $("#share_btn").on("click", function() {
  $("#shareit").on("click", function(){
    $("#shareit").hide();
  })
-
-
  WeixinApi.ready(function(Api) {
      // 微信分享的数据
      var wxData = {
@@ -85,19 +83,15 @@ $("#share_btn").on("click", function() {
      var wxCallbacks = {
          // 分享操作开始之前
          ready : function() {
-            alert(0)
          },
          cancel : function(resp) {
-           alert(2)
          },
          // 分享失败了
          fail : function(resp) {
-            alert(2)
-           alert("shibai")
          },
          // 分享成功
          confirm : function(resp) {
- 			       shareok();
+ 			shareok();
          },
          all : function(resp,shareTo) {
          }
@@ -109,7 +103,6 @@ $("#share_btn").on("click", function() {
  });
  function shareok(){
 
-  alert(3)
  }
 
 
