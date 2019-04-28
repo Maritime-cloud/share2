@@ -88,6 +88,7 @@ $("#share_btn").on("click", function() {
          },
          // 分享失败了
          fail : function(resp) {
+           shareFail();
          },
          // 分享成功
          confirm : function(resp) {
@@ -102,8 +103,13 @@ $("#share_btn").on("click", function() {
      Api.generalShare(wxData,wxCallbacks);
  });
  function shareok(){
-
+   alert(123);
  }
+ function shareFail(){
+
+     alert(456);
+ }
+
 
 
 </script>
